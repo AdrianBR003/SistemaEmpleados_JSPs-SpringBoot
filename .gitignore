@@ -1,0 +1,52 @@
+# Directorio y archivos específicos de IntelliJ IDEA y Eclipse
+/.idea/
+/*.iml
+/.project
+/.classpath
+/.settings/
+/target/
+/bin/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de compilación y dependencias de Maven y Gradle
+/.mvn/
+/.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.properties
+mvnw
+mvnw.cmd
+/gradle/
+/.gradle/
+/build/
+/out/
+
+# Logs
+/logs
+*.log
+
+# Directorio de compilación de Spring Boot
+/target/
+/!src/main/
+/!src/test/
+
+# Propiedades sensibles como las credenciales de MySQL
+/src/main/resources/application.properties
+/src/main/resources/application.yml
+
+# Archivos temporales del servidor (Tomcat, Jetty, etc.)
+/*.war
+/*.ear
+
+# Archivos de configuración para contenedores de dependencias
+/.vscode/
+/.vscode/settings.json
+/.env
+
+# Dependencias descargadas
+/.m2/
+.gradle/
+
+# Archivos relacionados con test
+/test-output/
