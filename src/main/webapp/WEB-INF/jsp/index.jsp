@@ -1,7 +1,6 @@
 <%@ include file="comunes/cabecero.jsp" %>
 <%@ include file="comunes/navegacion.jsp"%>
 
-
 <div class="container">
     <div class="text-center" style="margin: 30px">
         <h3>Sistema de Empleados</h3>
@@ -15,6 +14,7 @@
                 <th scope="col">Nombre</th>
                 <th scope="col">Departamento</th>
                 <th scope="col">Sueldo</th>
+                <th scope="col"></th>
                 <th scope="col"></th>
             </tr>
             </thead>
@@ -36,7 +36,12 @@
                         </c:set>
                         <!-- Botones Editar -->
                         <a href="${urlEditar}" class="btn btn-warning btn-sm me-3">Editar</a>
-
+                    </td>
+                    <td class="text-center">
+                       <form action="${urlEliminar}" method="post">
+                            <input type="hidden" name="idEmpleado" value="${empleado.idEmpleado}"/>
+                            <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                       </form>
                     </td>
                 </tr>
             </c:forEach>

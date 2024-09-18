@@ -63,5 +63,12 @@ public class IndexControlador { // Controlador de la pagina de inicio
         return "redirect:/"; // Redirige al path de  "/" inicial!
     }
 
+    @RequestMapping(value = "/eliminar", method = RequestMethod.POST)
+    public String eliminar(@RequestParam int idEmpleado){
+        Empleado empleado = empleadoServicio.buscarEmpleadoporId(idEmpleado);
+        logger.info("Empleado a eliminar: " + empleado);
+        empleadoServicio.eliminarEmpleado(empleado);
+        return "redirect:/"; // Redirige al path de  "/" inicial!
+    }
 
 }

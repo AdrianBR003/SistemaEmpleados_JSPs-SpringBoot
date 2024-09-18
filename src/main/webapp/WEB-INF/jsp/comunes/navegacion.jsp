@@ -13,6 +13,10 @@
     <c:url value="${application.contextPath}/editar" />
 </c:set>
 
+<c:set var="urlEliminar">
+    <c:url value="${application.contextPath}/eliminar" />
+</c:set>
+
 
 <!DOCTYPE html>
 <html lang="en">
