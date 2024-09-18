@@ -12,6 +12,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -46,5 +47,21 @@ public class IndexControlador { // Controlador de la pagina de inicio
         empleadoServicio.guardarEmpleado(empleado);
         return "redirect:/"; // Redirige al path de  "/" inicial!
     }
+
+    @RequestMapping(value="/editar", method = RequestMethod.GET)
+    public String editar(@RequestParam int idEmpleado, ModelMap modelo){
+        Empleado empleado = empleadoServicio.buscarEmpleadoporId(idEmpleado);
+        logger.info("Empleado a editar: " + empleado);
+        modelo.put("empleado",empleado);
+        return "editar"; // editar.jsp
+    }
+
+    @RequestMapping(value = "/editar", method = RequestMethod.POST)
+    public String agregar(@ModelAttribute("empleadoForma") Empleado empleado){
+        logger.info("Empleado a editar: " + empleado);
+        empleadoServicio.guardarEmpleado(empleado);
+        return "redirect:/"; // Redirige al path de  "/" inicial!
+    }
+
 
 }
