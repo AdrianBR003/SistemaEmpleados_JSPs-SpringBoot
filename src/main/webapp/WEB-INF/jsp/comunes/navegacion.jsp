@@ -9,6 +9,10 @@
     <c:url value="${application.contextPath}/agregar" />
 </c:set>
 
+<c:set var="urlEditar">
+    <c:url value="${application.contextPath}/editar" />
+</c:set>
+
 
 <!DOCTYPE html>
 <html lang="en">
